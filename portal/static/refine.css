@@ -1,0 +1,129 @@
+/* Minimal visual layer: one neutral palette, one accent, quiet surfaces. Loaded after the legacy looks; prefixed with html to win over lazily loaded dialogue styles. */
+html{--bg:#fbfbfa;--sidebar-bg:#f5f5f3;--card:#ffffff;--line:#ebebe7;--line-strong:#dcdcd6;--text:#1c1c1a;--muted:#6f6e69;--accent:#c4613f;--accent-ink:#ffffff;--soft:#f0f0ed;--code-bg:#f5f5f2;--ring:color-mix(in srgb,var(--accent) 45%,transparent);--shadow:0 1px 2px #1c1c1a0a,0 4px 16px #1c1c1a0d;--shadow-pop:0 1px 2px #1c1c1a0f,0 12px 32px #1c1c1a1f;--r-sm:8px;--r-md:12px;--r-lg:20px;color-scheme:light}
+html[data-theme=light]{--bg:#fbfbfa;--sidebar-bg:#f5f5f3;--card:#ffffff;--line:#ebebe7;--line-strong:#dcdcd6;--text:#1c1c1a;--muted:#6f6e69;--accent:#c4613f;--accent-ink:#ffffff;--soft:#f0f0ed;--code-bg:#f5f5f2}
+html[data-theme=dark]{--bg:#121211;--sidebar-bg:#171716;--card:#1c1c1b;--line:#272725;--line-strong:#363633;--text:#ececea;--muted:#9e9d97;--accent:#e08f6d;--accent-ink:#161210;--soft:#232321;--code-bg:#0e0e0d;--shadow:0 1px 2px #0006,0 4px 16px #0004;--shadow-pop:0 1px 2px #0008,0 16px 40px #0007;color-scheme:dark}
+
+html body{font-weight:400;letter-spacing:-.011em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+html ::selection{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+html time,html .sess-meta,html .usage-head,html .dialogue-file-pct{font-variant-numeric:tabular-nums}
+html *{scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+html ::-webkit-scrollbar{width:10px;height:10px}
+html ::-webkit-scrollbar-thumb{background:var(--line-strong);border:3px solid transparent;border-radius:10px;background-clip:padding-box}
+html ::-webkit-scrollbar-track{background:transparent}
+
+/* Sidebar */
+html .navigation{background:var(--sidebar-bg);border-right:1px solid var(--line)}
+html .navigation-head{min-height:64px;padding:12px 12px 8px 16px}
+html .navigation-head strong{font-size:14px;letter-spacing:-.02em}
+html .navigation-head strong span{font-size:10px;letter-spacing:.02em}
+html .navigation-mark{width:28px;height:28px}
+html .nav-icon{border-radius:var(--r-sm);color:var(--muted)}
+html .nav-icon:hover,html #navigation-open:hover{color:var(--text);background:var(--soft);border-color:transparent}
+html #navigation-open{background:transparent;border-color:transparent}
+html .navigation #tabs{gap:2px;padding-bottom:14px}
+html .navigation #tabs .tab{min-height:38px;grid-template-columns:22px minmax(0,1fr);gap:10px;padding:6px 10px;border:0;border-radius:var(--r-sm);font-size:13px;font-weight:450;color:var(--muted)}
+html .navigation #tabs .tab:hover{color:var(--text);background:var(--soft)}
+html .navigation #tabs .tab[aria-selected=true]{color:var(--text);background:var(--card);box-shadow:0 0 0 1px var(--line),0 1px 2px #0000000a;font-weight:550}
+html .navigation-symbol{width:22px;height:22px;padding:2px;background:none;color:inherit}
+html .navigation #tabs .tab[aria-selected=true] .navigation-symbol{color:var(--accent);background:none}
+html #navigation-other>summary{min-height:38px;padding:10px 14px;font-size:13px;font-weight:450;color:var(--muted);border-radius:var(--r-sm)}
+html #navigation-other>summary:hover{color:var(--text)}
+html .navigation-label{margin:20px 12px 8px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);opacity:.8}
+html .navigation .code-side>.row .primary,html .navigation .prompt-new{border:1px solid var(--line);background:var(--card);border-radius:var(--r-sm);font-weight:500;box-shadow:0 1px 2px #0000000a}
+html .navigation .code-side>.row .primary:hover,html .navigation .prompt-new:hover{border-color:var(--line-strong)}
+html .navigation .sess-list li,html .navigation .saved-chat{border-radius:var(--r-sm)}
+html .navigation .sess-list li:hover{background:var(--soft)}
+html .navigation .sess-list li.active{background:var(--card);box-shadow:0 0 0 1px var(--line)}
+html .navigation .sess-open{color:var(--text)}
+html .navigation .account{border-top:1px solid var(--line);padding-left:16px}
+html .account-signout{text-decoration:none}
+html .account-signout:hover{color:var(--text)}
+
+/* Header */
+html .mode-header{background:var(--bg)}
+html #page-title{font-size:13px;font-weight:550;letter-spacing:-.01em}
+html #tools-handle{color:var(--muted);border-radius:var(--r-sm)}
+html #tools-handle:hover,html #tools-handle[aria-expanded=true]{color:var(--text)}
+html #tools-drawer{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-pop)}
+
+/* Controls */
+html .btn{border-color:var(--line);background:var(--card);border-radius:var(--r-sm);font-weight:500}
+html .btn.primary,html .btn[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text)}
+html .tab,html .key{border-radius:var(--r-sm)}
+html input[type=text],html input[type=search],html select,html .mobile-text-field{background:var(--card);border-color:var(--line);border-radius:var(--r-sm)}
+html input[type=text]:focus,html input[type=search]:focus,html select:focus{border-color:var(--line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}
+html .btn:focus-visible,html .tab:focus-visible,html .nav-icon:focus-visible,html .theme-toggle:focus-visible,html summary:focus-visible,html .dialogue-actions .btn:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+html .modal{background:color-mix(in srgb,#000 40%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+html .modal-box{border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-pop);padding:20px}
+html .modal-box h2{font-size:16px;font-weight:600;letter-spacing:-.02em}
+html .pcrow,html .hist-item,html .mobile-text-panel{border-color:var(--line);border-radius:var(--r-md);background:var(--card)}
+
+/* Dialogue */
+html .code .code-dialogue .dialogue-feed{gap:28px}
+html .code .code-dialogue .message-user{background:var(--soft);border-radius:18px 18px 6px 18px;padding:11px 16px}
+html .code .code-dialogue .message-author{font-size:11px;font-weight:500;color:var(--muted)}
+html .code .message-body h1,html .code .message-body h2,html .code .message-body h3{letter-spacing:-.02em;line-height:1.3}
+html .code .message-body a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+html .code .message-body :not(pre)>code{background:var(--soft);border-radius:5px;padding:.1em .35em;font-size:.9em}
+html .code .tool-card{border-color:var(--line);border-radius:var(--r-md);background:transparent}
+html .code .tool-card summary{color:var(--muted)}
+html .code .tool-details pre,html .code .message-code{background:var(--code-bg);border-color:var(--line);border-radius:var(--r-md)}
+html .code .code-dialogue .dialogue-composer{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+html .code .code-dialogue .dialogue-composer:focus-within{border-color:var(--line-strong);box-shadow:var(--shadow),0 0 0 4px color-mix(in srgb,var(--accent) 9%,transparent)}
+html .code .code-dialogue .dialogue-actions .dialogue-send{background:var(--text);border-color:var(--text);color:var(--bg)}
+html .code .code-dialogue .dialogue-actions .dialogue-send:disabled{opacity:.25}
+html .code .code-dialogue .dialogue-actions .dialogue-stop{background:var(--soft);border-color:var(--line);color:var(--text)}
+html .code .dialogue-down{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+html .code .code-dialogue .dialogue-feed:empty::before{font-size:26px;font-weight:500;letter-spacing:-.03em;color:var(--text)}
+html .code .model-panel,html .dialogue-menu{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-pop)}
+html .code .model-toggle{border-radius:var(--r-sm)}
+html .tip-pop{border-radius:var(--r-sm);box-shadow:var(--shadow-pop)}
+html .prompts .prompt-document{border-color:var(--line);border-radius:var(--r-md)}
+html .portal-update{background:var(--card);color:var(--text);border-color:var(--line);box-shadow:var(--shadow-pop)}
+html .code .code-dialogue .dialogue-actions .dialogue-usage-btn{background:transparent;border-color:var(--line);color:var(--muted)}
+html .code .code-dialogue .dialogue-actions .dialogue-usage-btn[aria-expanded=true]{background:var(--soft);color:var(--text)}
+html .message-retiring .message-body{white-space:pre-wrap;overflow-wrap:anywhere}
+html .message-retiring time{color:var(--muted)}
+html .tool-card summary::before{display:inline-block;width:1ch;text-align:center}
+html .tool-card[open] summary::before{content:'›';transform:rotate(90deg)}
+html .chat-list .chat-item .sess-name::before{content:none}
+html .chat-dot{flex:none;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:26px;height:36px;margin:0 -4px 0 2px;padding:0;border:0;border-radius:8px;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+html .chat-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+html .chat-item.live .chat-dot::before{background:#3fb950;box-shadow:0 0 0 2.5px color-mix(in srgb,#3fb950 16%,transparent)}
+html .chat-item.starting .chat-dot::before{background:#d29922;box-shadow:0 0 0 3px color-mix(in srgb,#d29922 18%,transparent)}
+html .chat-item.ended .chat-dot::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--muted)}
+html .chat-dot:disabled{cursor:progress}
+html .chat-dot:focus-visible{outline:2px solid var(--ring);outline-offset:-2px}
+@media(max-width:768px),(pointer:coarse){html .chat-dot{width:36px;height:44px;margin:0 -6px 0 0}html .chat-dot::before{width:10px;height:10px}}
+html .chat-slots{display:flex;align-items:center;gap:8px;margin:4px 12px 8px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+html .chat-slots:empty{display:none}
+html .chat-slot-dots{display:inline-flex;gap:3px;flex:none}
+html .chat-slot{width:6px;height:6px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line-strong)}
+html .chat-slot.mine{background:#3fb950;box-shadow:none}
+html .chat-slot.other{background:var(--muted);box-shadow:none}
+html .chat-slots.full{color:var(--text)}
+
+/* Model switch: the label ellipsizes, the chevron is drawn so it never clips into the text. */
+html .code .model-toggle,html .code .code-dialogue .dialogue-actions .model-toggle{display:inline-flex;align-items:center;gap:7px;min-width:0;max-width:100%}
+html .code .model-toggle .model-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html .code .model-toggle::after{content:"";display:inline-block;flex:none;width:6px;height:6px;margin:-3px 2px 0 0;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);font-size:0}
+
+/* Phone composer: one calm row — attach and usage on the left, model in the free space, mic and send on the right. */
+@media(max-width:768px),(pointer:coarse){
+ html .code .code-dialogue .dialogue-composer{padding:10px 10px 8px 12px;border-radius:24px}
+ html .code .code-dialogue .dialogue-actions{flex-wrap:nowrap;gap:2px;margin-top:6px}
+ html .code .code-dialogue .dialogue-actions>.dialogue-attach{order:1}
+ html .code .code-dialogue .dialogue-actions>.dialogue-usage-btn{order:2}
+ html .code .code-dialogue .dialogue-actions>.model-bar{order:3;flex:1 1 auto;min-width:0;width:auto;margin:0;padding:0 2px;justify-content:flex-end}
+ html .code .code-dialogue .dialogue-actions>.dialogue-mic{order:4}
+ html .code .code-dialogue .dialogue-actions>.dialogue-stop{order:5}
+ html .code .code-dialogue .dialogue-actions>.dialogue-send{order:6}
+ html .code .code-dialogue .dialogue-actions .icon-btn,html .code .code-dialogue .dialogue-actions .dialogue-usage-btn{flex:none;width:40px;min-width:40px;height:40px;min-height:40px;padding:0;border-radius:50%}
+ html .code .code-dialogue .dialogue-actions .dialogue-usage-btn{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:var(--muted);font-size:0}
+ html .code .code-dialogue .dialogue-actions .dialogue-usage-btn::before{content:"";width:20px;height:20px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M3.5 16.5a8.5 8.5 0 1 1 17 0'/%3E%3Cpath d='M12 16.5l4-5'/%3E%3Ccircle cx='12' cy='16.5' r='1' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M3.5 16.5a8.5 8.5 0 1 1 17 0'/%3E%3Cpath d='M12 16.5l4-5'/%3E%3Ccircle cx='12' cy='16.5' r='1' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat}
+ html .code .code-dialogue .dialogue-actions .dialogue-usage-btn[aria-expanded=true]{background:var(--soft);color:var(--text)}
+ html .code .model-toggle{min-height:40px;padding:4px 8px;font-size:13px;border-radius:20px}
+ html .code .code-dialogue .dialogue-actions .dialogue-send{width:40px;min-width:40px;height:40px;min-height:40px}
+}
+html .mode-actions{list-style:none;padding-left:0}
+@media(max-width:768px),(pointer:coarse){html .navigation #tabs .tab,html #navigation-other>summary,html .navigation .code-side>.row .btn{min-height:44px}}

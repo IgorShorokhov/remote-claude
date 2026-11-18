@@ -1,0 +1,30 @@
+.skills{width:min(100%,960px)}
+.navigation .skill-side>.row{padding:0 4px}.navigation .skill-import{width:100%;text-align:left;font-size:12px;min-height:34px;border:1px dashed var(--line);background:transparent;color:var(--muted)}
+.navigation .skill-side .chat-search{padding:0 4px}
+.navigation .skill-open{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:6px 10px}
+.navigation .skill-line{font-size:10.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.navigation .skill-item.broken .skill-line{color:var(--accent)}
+.skill-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.skill-name{margin:0;font-size:20px;font-weight:600;letter-spacing:-.01em;overflow-wrap:anywhere}
+.skill-about{margin:0;font-size:12.5px;line-height:1.55;color:var(--muted)}
+.skill-problem{margin:0;font-size:12px;padding:8px 10px;border:1px solid var(--accent);border-radius:9px;color:var(--accent)}
+.skill-files{display:flex;flex-wrap:wrap;gap:6px}
+.skill-file{font:12px ui-monospace,Menlo,Consolas,monospace;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--text);cursor:pointer;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.skill-file.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.skill-document{flex:1;min-height:260px;display:flex;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.skill-editor{flex:1;width:100%;resize:none;border:0;background:transparent;color:var(--text);padding:16px 18px;font:13px/1.65 ui-monospace,Menlo,Consolas,monospace;tab-size:2;outline:none}
+.skill-editor[readonly]{color:color-mix(in srgb,var(--text) 88%,var(--muted))}
+.skill-actions .btn:disabled{opacity:.5}
+@media(max-width:768px),(pointer:coarse){.skill-editor{font-size:14px;padding:12px}.skill-file{min-height:36px}.navigation .skill-import{min-height:44px}}
+html.motion-ready .skill-file{transition:border-color .16s ease,box-shadow .16s ease}
+.skill-view:not([hidden]){animation:motion-pane .2s var(--ease-out)}
+.skill-about{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;cursor:pointer}
+.skill-about.open{display:block;-webkit-line-clamp:unset}
+@media(max-width:768px){
+ .skill-about{-webkit-line-clamp:2}
+ .skill-files,.skill-actions{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+ .skill-files::-webkit-scrollbar,.skill-actions::-webkit-scrollbar{display:none}
+ .skill-file,.skill-actions .btn{flex:none}
+ .skill-document{min-height:55vh}
+}
+.skill-hint{margin:0;font-size:11px;color:var(--muted)}

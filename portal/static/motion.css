@@ -1,0 +1,74 @@
+:root{--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1);--ease-drawer:cubic-bezier(.32,.72,0,1)}
+@keyframes motion-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes motion-drop{from{opacity:0;transform:translateY(-4px) scale(.97);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}
+@keyframes motion-rise{from{opacity:0;transform:translateY(4px) scale(.97);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}
+@keyframes motion-fade{from{opacity:0}to{opacity:1}}
+@keyframes motion-pane{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes motion-sheet{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes motion-pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes motion-modal{from{opacity:0;transform:scale(.96) translateY(6px)}to{opacity:1;transform:none}}
+@keyframes motion-greet{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes motion-breathe{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
+@keyframes motion-glow{0%,100%{opacity:1}50%{opacity:.7}}
+@media(min-width:769px){
+ html.motion-ready body{transition:grid-template-columns .22s var(--ease-in-out)}
+ html.motion-ready .navigation{opacity:0;transition:opacity .2s var(--ease-out),visibility 0s linear .2s}
+ html.motion-ready.navigation-expanded .navigation{opacity:1;transition:opacity .2s var(--ease-out),visibility 0s}
+}
+@media(max-width:768px){
+ html.motion-ready .navigation{transition:transform .2s var(--ease-drawer)}
+ #navigation-backdrop{display:block;position:fixed;inset:0;border:0;background:#0007;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:55;opacity:1;visibility:visible}
+ #navigation-backdrop[hidden]{display:block!important;opacity:0;visibility:hidden;pointer-events:none}
+ html.motion-ready #navigation-backdrop{transition:opacity .2s ease,visibility 0s}
+ html.motion-ready #navigation-backdrop[hidden]{transition:opacity .2s ease,visibility 0s linear .2s}
+ html.motion-ready .panel,html.motion-ready .mode-header{transition:visibility 0s}
+ html.motion-ready.navigation-expanded .panel,html.motion-ready.navigation-expanded .mode-header{transition:visibility 0s linear .2s}
+}
+.dialogue-feed>.motion-in{animation:motion-in .22s var(--ease-out) both}
+.dialogue-menu:not([hidden]){animation:motion-drop .18s var(--ease-out);transform-origin:top left}
+.code .model-panel:not([hidden]){animation:motion-rise .18s var(--ease-out);transform-origin:bottom right}
+#tools-drawer:not([hidden]){animation:motion-drop .2s var(--ease-out);transform-origin:top right}
+.tip-pop:not([hidden]){animation:motion-fade .15s var(--ease-out)}
+.tip-pop.sheet:not([hidden]){animation:motion-sheet .24s var(--ease-drawer)}
+.modal:not([hidden]){animation:motion-fade .2s var(--ease-out)}
+.modal:not([hidden])>.modal-box{animation:motion-modal .24s var(--ease-out)}
+.portal-update{animation:motion-sheet .24s var(--ease-out)}
+.dialogue-stop:not([hidden]),.dialogue-send:not([hidden]){animation:motion-pop .16s var(--ease-out)}
+.code .code-dialogue .dialogue-feed:empty::before{animation:motion-greet .25s var(--ease-out) both}
+html.motion-ready .btn,html.motion-ready .nav-icon,html.motion-ready .key,html.motion-ready .theme-toggle,html.motion-ready #tools-handle,html.motion-ready .model-toggle,html.motion-ready .dialogue-actions .btn,html.motion-ready .chat-act,html.motion-ready .chat-acts,html.motion-ready .tip{transition:background-color .16s ease,color .16s ease,border-color .16s ease,box-shadow .16s ease,opacity .16s ease,transform .16s var(--ease-out)}
+html.motion-ready .btn:active:not(:disabled),html.motion-ready .nav-icon:active,html.motion-ready .key:active,html.motion-ready .theme-toggle:active,html.motion-ready #tools-handle:active,html.motion-ready .model-toggle:active:not(:disabled){transform:scale(.97)}
+html.motion-ready .dialogue-actions .btn:active:not(:disabled){transform:scale(.94)}
+html.motion-ready .tab{transition:background-color .16s ease,color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s var(--ease-out)}
+html.motion-ready .navigation #tabs .tab:active{transform:scale(.985)}
+html.motion-ready .navigation-symbol{transition:color .16s ease}
+html.motion-ready .code-dialogue .dialogue-composer,html.motion-ready input[type=text],html.motion-ready input[type=search]{transition:border-color .2s ease,box-shadow .2s var(--ease-out)}
+html.motion-ready .sess-rename,html.motion-ready .sess-del,html.motion-ready .saved-chat .btn,html.motion-ready .sess-meta{transition:opacity .15s ease,color .15s ease}
+html .dialogue-activity[data-state=thinking]::before,html .dialogue-activity[data-state=running]::before{animation:motion-breathe 1.8s ease-in-out infinite}
+html .dialogue-activity[data-state=thinking]{animation:motion-glow 2.4s ease-in-out infinite}
+html.motion-pane .panel>.tabpane:not([hidden]){animation:motion-pane .2s var(--ease-out)}
+html.motion-ready .sess-list li,html.motion-ready .navigation .saved-chat{transition:background-color .16s ease,box-shadow .16s ease}
+html.motion-ready .navigation .saved-chats>summary::after,html.motion-ready .mobile-text-panel>summary::after{transition:transform .2s var(--ease-out)}
+html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:background-color .22s ease,color .22s ease,border-color .22s ease,fill .22s ease,stroke .22s ease,box-shadow .22s ease!important}
+@keyframes motion-row{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.dialogue-message{transition:opacity .2s ease}
+.dialogue-message.message-retiring{opacity:.55}
+.dialogue-down:not([hidden]){animation:motion-pop .18s var(--ease-out)}
+.tool-card[open]>:not(summary){animation:motion-drop .2s var(--ease-out);transform-origin:top left}
+.tool-card summary::before{transition:transform .2s var(--ease-out)}
+.chat-list li.motion-row{animation:motion-row .22s var(--ease-out) both}
+.chat-list li.chat-leaving{pointer-events:none}
+.dev-list .dev-row.motion-row{animation:motion-row .22s var(--ease-out) both}
+.dialogue-file.motion-chip{animation:motion-pop .18s var(--ease-out)}
+.dialogue-feed.feed-arrive{animation:motion-fade .2s var(--ease-out)}
+.authbar:not([hidden]){animation:motion-drop .22s var(--ease-out);transform-origin:top center}
+.file-viewer[open]{animation:motion-modal .24s var(--ease-out)}
+.file-viewer[open]::backdrop,.dialogue-text-preview[open]::backdrop{animation:motion-fade .2s var(--ease-out)}
+.dialogue-text-preview[open]{animation:motion-modal .24s var(--ease-out)}
+.chat-item.starting .chat-dot::before,.chat-dot:disabled::before{animation:motion-breathe 1.8s ease-in-out infinite}
+.chat-dot::before{transition:background-color .2s ease,box-shadow .2s ease,transform .16s var(--ease-out)}
+.chat-dot:active::before{transform:scale(.8)}
+@media(hover:hover) and (pointer:fine){.chat-dot:hover::before{transform:scale(1.25)}}
+.chat-slot{transition:background-color .2s ease,box-shadow .2s ease}
+@media(prefers-reduced-motion:reduce){
+ html,html *,html *::before,html *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+}

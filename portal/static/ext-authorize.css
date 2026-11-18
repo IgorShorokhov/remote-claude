@@ -1,0 +1,7 @@
+body{align-items:center;justify-content:center;padding:16px}
+.ext-card{width:min(440px,100%);padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--card);display:flex;flex-direction:column;gap:12px}
+.ext-card h1{margin:0;font-size:20px;font-weight:600}
+.ext-card p{margin:0;line-height:1.5}
+.ext-card input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);letter-spacing:.12em;text-transform:uppercase}
+.ext-code{font-size:28px;font-weight:600;letter-spacing:.18em;text-align:center;padding:12px;border:1px dashed var(--line);border-radius:10px}
+.ext-card .btn{padding:10px 14px;text-align:center}

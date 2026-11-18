@@ -1,0 +1,70 @@
+.code-primary-note{margin:0 0 6px;line-height:1.5}
+.model-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-bottom:8px;flex-shrink:0}
+.code select{font:inherit;font-size:13px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px;max-width:100%;min-width:0}
+.control-result{flex-basis:100%;overflow-wrap:anywhere}
+.model-status{overflow-wrap:anywhere;flex:1;min-width:140px}
+.sess-path,.sess-name{overflow-wrap:anywhere;max-width:100%}
+.sess-rename{background:none;border:0;color:var(--muted);padding:0 6px;cursor:pointer;font-size:16px}
+.code-side>*{flex-shrink:0}
+.management-side{font-family:Montserrat,system-ui,sans-serif;min-width:0}
+.management-side details{border-top:1px solid var(--line);padding:10px 0}
+.management-side summary{cursor:pointer;font-size:13px;font-weight:600;line-height:1.5}
+.management-side input{width:100%;margin:8px 0}
+.file-tree,.saved-list{list-style:none;margin:8px 0;padding:0;min-width:0}
+.file-tree .file-tree{padding-left:12px;border-left:1px solid var(--line)}
+.file-entry{background:none;border:0;color:var(--text);font:inherit;font-size:12px;cursor:pointer;padding:6px 2px;text-align:left;overflow-wrap:anywhere;max-width:100%}
+.saved-chat{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);padding:8px;border-radius:8px;margin:8px 0;overflow-wrap:anywhere;font-size:12px}
+.saved-chat strong{font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.saved-chat .btn{align-self:flex-start}
+.file-preview .modal-box{max-width:1000px;min-width:0}
+.file-preview h2{overflow-wrap:anywhere}
+.file-preview pre{overflow:auto;max-height:60vh;white-space:pre;font:13px/1.6 ui-monospace,monospace;background:var(--bg);padding:12px;border-radius:8px}
+@media(max-width:768px),(pointer:coarse){.code-primary-note{font-size:10px;max-height:32px;overflow:auto}.model-bar{gap:5px;padding-bottom:5px}.model-status{font-size:10px;flex-basis:100%}.code select{font-size:16px;max-width:52%}.new-model{max-width:100%!important}.sess-rename,.sess-del{min-width:30px}.term-head{font-size:12px}.model-bar .btn{padding:7px}}
+.chat-list li.chat-item{position:relative;align-items:center}
+.chat-list .chat-none{padding:8px 7px;border:0;background:none}
+.chat-item .sess-name{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-item.sleeping:not(.active) .sess-name{color:var(--muted)}
+.chat-act:disabled{opacity:.4;cursor:wait}
+.chat-item.live .sess-name::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fb950;margin-right:7px;vertical-align:middle}
+.chat-live{display:none}
+.chat-acts{flex:none;display:flex;gap:1px;opacity:0}
+.chat-item:hover .chat-acts,.chat-item:focus-within .chat-acts{opacity:1}
+.chat-item.editing .chat-acts{display:none}
+.chat-act{display:flex;align-items:center;justify-content:center;width:26px;height:26px;padding:0;border:0;border-radius:6px;background:none;color:var(--muted);cursor:pointer}
+.chat-act:hover,.chat-act:focus-visible{background:color-mix(in srgb,var(--muted) 18%,transparent);color:var(--text);outline:none}
+.chat-act.chat-delete:hover,.chat-act.chat-delete:focus-visible{color:#e5534b}
+.chat-edit{flex:1;min-width:0;margin:4px 2px;padding:5px 7px;border:1px solid var(--accent,var(--line));border-radius:6px;background:var(--bg);color:var(--text);font:inherit;font-family:Montserrat,sans-serif;font-size:13px;outline:none}
+.chat-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center}
+.chat-empty h2{margin:0;font-weight:500;font-size:22px}
+.code-side>.row .chat-new{flex:1}
+.chat-search{display:flex;flex-direction:column;gap:6px;margin:6px 0}
+.chat-search[hidden]{display:none}
+.chat-search-field{position:relative;display:flex}
+.chat-search-input{flex:1;min-width:0;padding:6px 28px 6px 9px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);font:inherit;font-family:Montserrat,sans-serif;font-size:13px;outline:none}
+.chat-search-input::-webkit-search-cancel-button{display:none}
+.chat-search-clear{position:absolute;right:4px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);font-size:16px;line-height:1;cursor:pointer;padding:2px 5px}
+.chat-search-toggle{display:flex;align-items:center;gap:6px;color:var(--muted);cursor:pointer;font-family:Montserrat,sans-serif}
+.chat-snippet{display:block;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.chat-snippet mark{background:rgba(255,200,0,.35);color:inherit;border-radius:2px}
+.chat-nothing{display:flex;flex-direction:column;gap:4px;padding:10px 6px}
+@media(max-width:768px),(pointer:coarse){.chat-search-input{font-size:16px}}
+@media(max-width:768px),(pointer:coarse){.chat-acts{opacity:1}.chat-act{width:36px;height:36px}.chat-edit{font-size:16px}}
+.backup-config-bar{display:flex;align-items:center;gap:8px;padding:4px 0 8px;flex-wrap:wrap}
+.backup-config-label{font-weight:500;white-space:nowrap}
+.backup-config-key,.backup-config-base{font:inherit;font-family:Montserrat,sans-serif;font-size:13px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 10px;min-width:180px;max-width:320px;flex:1;outline:none}
+.backup-config-key:focus,.backup-config-base:focus{border-color:var(--accent,var(--line))}
+.backup-config-save{font:inherit;font-family:Montserrat,sans-serif;font-size:13px;padding:6px 14px}
+@media(max-width:768px),(pointer:coarse){.backup-config-key,.backup-config-base{font-size:16px;min-width:140px}}
+.chat-more{font-size:16px;line-height:1}
+.chat-menu-popup{position:absolute;right:4px;top:calc(100% + 2px);z-index:30;background:var(--bg);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.15);display:flex;flex-direction:column;padding:4px;min-width:140px}
+.chat-menu-item{background:none;border:0;color:var(--text);font:inherit;font-family:Montserrat,sans-serif;font-size:12px;padding:7px 10px;text-align:left;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.chat-menu-item:hover,.chat-menu-item:focus-visible{background:color-mix(in srgb,var(--muted) 16%,transparent);outline:none}
+.chat-menu-item.chat-menu-delete{color:#e5534b}
+.backup-settings-btn{font-size:12px;padding:4px 8px;margin-left:6px}
+.backup-config-bar[hidden]{display:none}
+
+.backup-config-bar{flex-direction:column;align-items:stretch;gap:14px}
+.backup-config-section{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.backup-config-section>strong,.backup-config-note{flex:0 0 100%}
+/* xterm writes these slider colors into an inline <style>, which the page CSP blocks; the defaults for the theme foreground #e6e8ee */
+.xterm .xterm-scrollable-element>.scrollbar>.slider{background:rgba(230,232,238,.2)}.xterm .xterm-scrollable-element>.scrollbar>.slider:hover{background:rgba(230,232,238,.4)}.xterm .xterm-scrollable-element>.scrollbar>.slider.active{background:rgba(230,232,238,.5)}

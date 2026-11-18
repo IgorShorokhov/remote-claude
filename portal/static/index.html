@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="color-scheme" content="light dark">
+<meta name="portal-version" content="dev">
+<script src="/static/claude-look.js"></script>
+<title>Remote Claude</title>
+<link rel="icon" type="image/svg+xml" href="/static/claude.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+<link rel="manifest" href="/static/manifest.webmanifest" crossorigin="use-credentials">
+<meta name="theme-color" content="#fbfbfa">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/mobile-text.css">
+<link rel="stylesheet" href="/static/portal-shell.css">
+<link rel="stylesheet" href="/static/claude-look.css">
+<link rel="stylesheet" href="/static/claude-look-compact.css">
+<link rel="stylesheet" href="/static/refine.css">
+<link rel="stylesheet" href="/static/motion.css">
+<link rel="stylesheet" href="/static/embed.css">
+<link rel="stylesheet" href="/static/devices.css">
+<script src="/static/motion.js"></script>
+</head>
+<body>
+<aside id="navigation" class="navigation" aria-label="Navigation">
+<div class="navigation-head"><div class="navigation-brand"><img class="navigation-mark" src="/static/claude.svg" alt="" aria-hidden="true"><strong>Remote Claude<span>Workspace</span></strong></div><button id="navigation-close" class="nav-icon" type="button" aria-label="Close sidebar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7 7 10 10M17 7 7 17"/></svg></button></div>
+<div class="navigation-scroll">
+<nav id="tabs" class="tabs" role="tablist" aria-label="Modes" aria-orientation="vertical"></nav>
+<div id="navigation-sessions"><p class="navigation-label">Chats</p><div id="session-host"></div></div>
+</div>
+<div class="account">
+<div class="who" title="Account">
+<svg class="user-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/></svg>
+<span id="who-email"></span>
+<span id="who-role" hidden></span>
+</div>
+<a class="account-signout" href="/oauth2/sign_out?rd=/">Sign out</a>
+</div>
+</aside>
+<button id="navigation-backdrop" type="button" aria-label="Close menu" tabindex="-1" hidden></button>
+<header class="mode-header"><button id="navigation-open" class="nav-icon" type="button" aria-label="Open sidebar" aria-controls="navigation" aria-expanded="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><span id="page-title">Code Web</span></header>
+<main id="panel" class="panel"></main>
+<script src="/static/util.js"></script>
+<script src="/static/embed.js"></script>
+<script src="/static/config.js"></script>
+<script src="/static/portal-shell.js"></script>
+<script src="/static/input.js"></script>
+<script src="/static/mobile-text.js"></script>
+<script src="/static/presence.js"></script>
+<script src="/static/frame-watchdog.js"></script>
+<script src="/static/desktop.js"></script>
+<script src="/static/code.js"></script>
+<script src="/static/prompts.js"></script>
+<script src="/static/skills.js"></script>
+<script src="/static/access.js"></script>
+<script src="/static/personal.js"></script>
+<script src="/static/history.js"></script>
+<script src="/static/devices.js"></script>
+<script src="/static/pc.js"></script>
+<script src="/static/sync.js"></script>
+<script src="/static/vpn.js"></script>
+<script src="/static/backup.js"></script>
+<script src="/static/navigation.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

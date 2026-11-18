@@ -1,0 +1,17 @@
+.prompts{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;width:min(100%,808px);align-self:center;margin:0 auto;font-family:Montserrat,system-ui,sans-serif}
+.navigation .prompt-side{display:flex;flex-direction:column;gap:8px;min-width:0;width:100%}
+.navigation .prompt-side>.row{padding:0 4px}.navigation .prompt-new{width:100%;text-align:left;border:0;background:var(--soft);font-size:12px;min-height:36px}.navigation .prompt-new::before{content:'+ ';font-size:18px}
+.navigation .prompt-list{gap:2px}.navigation .prompt-item{min-height:36px}.navigation .prompt-open{display:block;width:100%;text-align:left;font:inherit;font-size:12px;background:none;border:0;color:var(--text);border-radius:7px;cursor:pointer}.navigation .prompt-open .sess-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prompt-empty{display:flex;align-items:center;justify-content:center;flex:1;color:var(--muted);text-align:center}.prompt-empty p{max-width:300px;font-size:22px;line-height:1.5}
+.prompt-file{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;padding:12px 0;gap:12px}
+.prompt-header{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.prompt-title{flex:1;min-width:0;padding:8px 0;border:0;background:transparent;color:var(--text);font:inherit;font-size:20px}.prompt-status{color:var(--muted);font-size:11px}
+.prompt-actions{display:flex;flex-wrap:wrap;gap:6px}.prompt-actions .btn{font-family:inherit;font-size:12px;min-height:34px;background:var(--soft);border:1px solid var(--line);border-radius:9px}
+.prompt-error{font-size:12px;color:var(--accent);margin:0;padding:8px;overflow-wrap:anywhere;border:1px solid var(--line);border-radius:8px}
+.prompts .prompt-document{min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.prompts .prompt-document .prompt-rich{flex:1;height:100%;resize:none;max-height:none;min-height:0;padding:18px;font-size:14px;line-height:1.8;overflow:auto}
+@media(max-width:768px),(pointer:coarse){.prompts{width:100%}.prompt-file{gap:8px;padding:8px 0}.prompt-title{font-size:18px;flex-basis:100%;padding:4px}.prompt-status{padding:0 4px}.prompt-actions .btn{min-height:44px}.prompts .prompt-document .prompt-rich{font-size:16px;line-height:1.6;padding:14px}.navigation .prompt-new{min-height:44px}}
+.personal-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.personal-title{margin:0;font-size:20px;font-weight:600;letter-spacing:-.01em}
+.personal-about{margin:0;font-size:13px;line-height:1.6;color:var(--muted)}
+.personal-common{font-size:13px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;flex:none}.personal-common summary{cursor:pointer;color:var(--muted)}
+.personal-common-text{margin:8px 0 0;max-height:30vh;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.6}
+.personal .prompt-document{flex:1;min-height:160px}

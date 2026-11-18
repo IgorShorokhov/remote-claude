@@ -1,0 +1,33 @@
+# Remote Claude: настройки сервера. Поменяли — запустите снова: sudo ./install.sh
+
+# Почта Google владельца: только он администратор
+OWNER_EMAIL=""
+# Другие почты, которым можно входить (через пробел); потом их меняют на странице Access
+MEMBERS=""
+
+# Как сайт виден из интернета: domain (свой домен, сертификат Let's Encrypt) или tailscale (Tailscale Funnel, имя *.ts.net)
+SITE_MODE="domain"
+# Для SITE_MODE=domain: имя сайта, A-запись которого указывает на IP сервера
+DOMAIN=""
+
+# none: сервер ходит к Anthropic напрямую; warp: через Cloudflare WARP (если Anthropic недоступен из страны сервера)
+PROXY="none"
+
+# Разделы: yes или no. Code Web есть всегда. Готовые наборы:
+#   минимум   PROMPTS SKILLS INSTRUCTIONS
+#   обычный   минимум + CONSOLE MEMORY ACCESS (так сейчас)
+#   всё       обычный + DEVICES API_AGENT VOICE
+FEATURE_CONSOLE="yes"  # Console: терминал сервера в браузере (только владелец); цена: ничего
+FEATURE_PROMPTS="yes"  # Prompts: сохранённые промпты; цена: ничего
+FEATURE_SKILLS="yes"  # Skills: общие скиллы Claude, редактор; цена: ничего
+FEATURE_INSTRUCTIONS="yes"  # System instructions: свои инструкции для Claude у каждого аккаунта; цена: ничего
+FEATURE_MEMORY="yes"  # Memory: память о пользователе; ночью обновляется моделью Haiku; цена: немного лимита подписки
+FEATURE_ACCESS="yes"  # Access: страница владельца: кто входит и какие разделы видит; цена: ничего
+FEATURE_DEVICES="no"  # Computers: подключить свой компьютер и Chrome к Claude; цена: ничего
+FEATURE_API_AGENT="no"  # API Agent: агент на моделях OpenAI-совместимого API (свой ключ); цена: оплата API
+FEATURE_VOICE="no"  # Voice input: голосовой ввод, распознавание на сервере (Whisper small); цена: +1 ГБ RAM, 0,5 ГБ диска
+
+# Ночные резервные копии чатов и настроек (7 дней, /var/backups/remote-claude)
+BACKUPS="yes"
+# Название на странице входа
+TITLE="Remote Claude"

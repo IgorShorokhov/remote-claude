@@ -1,0 +1,10 @@
+/* The page height comes from the window size in unzoomed pixels (--portal-height); zoom shrinks it, so it is stretched back to fill the window. */
+html.embed { zoom: 0.88; }
+html.embed body, html.embed .navigation { height: calc(var(--portal-height) / 0.88); }
+html.embed #tabs,
+html.embed .account,
+html.embed .navigation-brand span,
+html.embed .tools-common { display: none; }
+html.embed .mode-header { min-height: 36px; padding-left: 12px; padding-right: 12px; }
+html.embed .panel { padding: 6px 14px 0; }
+html.embed .embed-copy { position: fixed; left: -9999px; top: 0; opacity: 0; }
